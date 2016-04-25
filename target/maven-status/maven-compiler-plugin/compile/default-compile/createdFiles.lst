@@ -1,4 +1,4 @@
-org/smart4j/chapter3/model/Customer.class
-org/smart4j/chapter3/controller/CustomerController.class
-org/smart4j/chapter3/aspect/ControllerAspect.class
 org/smart4j/chapter3/service/CustomerService.class
+org/smart4j/chapter3/controller/CustomerController.class
+org/smart4j/chapter3/model/Customer.class
+org/smart4j/chapter3/aspect/ControllerAspect.class

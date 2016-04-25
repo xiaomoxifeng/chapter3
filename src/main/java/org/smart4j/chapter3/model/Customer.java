@@ -34,6 +34,11 @@ public class Customer {
      */
     private String remark;
 
+    /**
+     * 照片
+     */
+    private String photo;
+
     public long getId() {
         return id;
     }
@@ -80,5 +85,13 @@ public class Customer {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

@@ -2,7 +2,9 @@ package org.smart4j.chapter3.service;
 
 import com.json.smart4j.framework.annotation.Service;
 import com.json.smart4j.framework.annotation.Transaction;
+import com.json.smart4j.framework.bean.FileParam;
 import com.json.smart4j.framework.helper.DatabaseHelper;
+import com.json.smart4j.framework.helper.UploadHelper;
 import org.smart4j.chapter3.model.Customer;
 
 import java.util.List;
@@ -29,12 +31,17 @@ public class CustomerService {
         return DatabaseHelper.queryEntity(Customer.class, sql, id);
     }
 
+
     /**
      * 创建客户
      */
     @Transaction
-    public boolean createCustomer(Map<String, Object> fieldMap) {
-        return DatabaseHelper.insertEntity(Customer.class, fieldMap);
+    public boolean createCustomer(Map<String, Object> fieldMap, FileParam fileParam) {
+        boolean result = DatabaseHelper.insertEntity(Customer.class, fieldMap);
+        if (result) {
+           UploadHelper.uploadFile("/tmp/upload/", fileParam);
+        }
+        return result;
     }
 
     /**
